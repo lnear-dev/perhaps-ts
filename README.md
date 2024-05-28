@@ -1,13 +1,13 @@
 # Maybe Type Library
 
-This library provides a `Maybe` type for handling optional values, inspired by functional programming languages. A `Maybe` can either be `Just` (containing a value) or `Nothing` (no value).
+This library provides a light `Maybe` type for handling optional values, inspired by functional programming languages. A `Maybe` can either be `Just` (containing a value) or `Nothing` (no value).
 
 ## Installation
 
 Install via npm:
 
 ```sh
-npm install maybe-ts
+npm install perhaps-ts
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm install maybe-ts
 You can create `Maybe` instances using the `Just` and `Nothing` static methods or helper functions.
 
 ```typescript
-import { Maybe, Just, Nothing } from "maybe-ts";
+import { Maybe, Just, Nothing } from "perhaps-ts";
 
 // Using static methods
 const maybeValue = Maybe.Just(5);
