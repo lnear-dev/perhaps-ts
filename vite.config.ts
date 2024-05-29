@@ -7,7 +7,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/maybe.ts"),
       name: "Typescript Maybe Monad",
-      fileName: "maybe",
+      fileName: "perhaps",
       formats: ["es"],
     },
   },
