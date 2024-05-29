@@ -12,6 +12,9 @@
       "require": "./dist/perhaps.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
