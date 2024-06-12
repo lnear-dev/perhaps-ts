@@ -26,25 +26,24 @@ describe('Maybe', () => {
     });
 
     test('should set value in output object using To method when instance is Just', () => {
-        const value = 42;
+        const value = Math.random();
         const just = Just(value);
-        // const out: { value?: number } = {};
-        const out: Maybe<number> = Nothing<number>();
-        expect(out.IsNothing()).toBe(true);
+        const out: { value?: number } = {};
         expect(just.To(out)).toBe(true);
-        expect(out.IsNothing()).toBe(false);
-        expect(out.FromJust()).toBe(value);
+        expect(out.value).toBe(value);
     });
-
+    test('should set value in output object using To method when instance is Just(with key)', () => {
+        const value = Math.random();
+        const just = Just(value);
+        const out: { key?: number } = {};
+        expect(just.To(out, 'key')).toBe(true);
+        expect(out.key).toBe(value);
+    });
     test('should not set value in output object using To method when instance is Nothing', () => {
-        const out: Maybe<number> = Just(42);
-        expect(out.IsNothing()).toBe(false);
-        expect(Nothing<number>().To(out)).toBe(false);
-        expect(out.IsNothing()).toBe(false);
-        expect(Just(43).To(out)).toBe(true);
-        expect(out.IsNothing()).toBe(false);
-        expect(out.FromJust()).toBe(43);
-
+        const nothing = Nothing<number>();
+        const out: { value?: number } = {};
+        expect(nothing.To(out)).toBe(false);
+        expect(out.value).toBeUndefined();
     });
 
     test('should return true for equals when both instances are Just with same value', () => {

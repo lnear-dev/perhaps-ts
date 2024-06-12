@@ -78,15 +78,13 @@ export class Maybe<T> {
     /**
      * Retrieves the value of a Just instance and sets it in the provided output object.
      * @param out - An object to hold the value if the instance is Just.
+     * @param key - The key to use when setting the value in the output object.
      * @returns {boolean} True if the instance is Just, otherwise false.
      */
-    To(out: Maybe<T>): boolean {
-        if (this.IsJust()) {
-            out.value = this.value;
-            out.hasValue = true;
-            return true;
-        }
-        return false;
+    To(out: { [key: string]: T }, key: string = 'value'): boolean {
+        if (this.IsNothing()) return false;
+        (out as any)[key] = this.value;
+        return true;
     }
 
     /**

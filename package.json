@@ -1,7 +1,7 @@
 {
   "name": "perhaps-ts",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "./dist/perhaps.js",
   "typings": "./dist/perhaps.d.ts",
@@ -11,6 +11,11 @@
       "import": "./dist/perhaps.js",
       "require": "./dist/perhaps.js"
     }
+  },
+  "author": {
+    "name": "Lanre Ajao",
+    "email": "hi@lnear.dev",
+    "url": "https://lnear.dev"
   },
   "files": [
     "dist"

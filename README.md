@@ -78,6 +78,28 @@ if (maybeValue.To(output)) {
 }
 ```
 
+Or you can use the `To` method with a custom key.
+
+```typescript
+type Output = { data?: number };
+type UserData = { id: number; name: string };
+
+const output: Output = {};
+if (maybeValue.To(output, "data")) {
+  console.log("Extracted Data:", output.data); // Extracted Data: 5
+} else {
+  console.log("No data to extract");
+}
+
+const user: Maybe<UserData> = Just({ id: 1, name: "Alice" });
+const userOutput: Output = {};
+if (user.To(userOutput, "data")) {
+  console.log("Extracted User:", userOutput.data); // Extracted User: { id: 1, name: 'Alice' }
+} else {
+  console.log("No user to extract");
+}
+```
+
 ### Equality Comparisons
 
 You can compare `Maybe` instances for equality.
@@ -233,8 +255,8 @@ These examples demonstrate how to use the `Maybe` type to handle cases where val
   - Alias for `FromJust`.
 - `FromMaybe(defaultValue: T): T`
   - Returns the value if the instance is `Just`, otherwise returns the provided default value.
-- `To(out: { value?: T }): boolean`
-  - If the instance is `Just`, sets the value in the provided output object and returns `true`, otherwise returns `false`.
+- `To(out: { [key: string]: T }, key?: string): boolean`
+  - If the instance is `Just`, sets the value in the provided output object and returns `true`, otherwise returns `false`. Optionally, you can specify a custom key, otherwise the default key is `"value"`.
 - `equals(other: Maybe<T>): boolean`
   - Returns `true` if the other `Maybe` instance is equal, otherwise `false`.
 - `notEquals(other: Maybe<T>): boolean`
