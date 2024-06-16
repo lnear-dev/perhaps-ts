@@ -1,7 +1,7 @@
 {
   "name": "perhaps-ts",
   "private": false,
-  "version": "0.0.4",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/perhaps.js",
   "typings": "./dist/perhaps.d.ts",
@@ -17,6 +17,14 @@
     "email": "hi@lnear.dev",
     "url": "https://lnear.dev"
   },
+  "maintainers": [
+    {
+      "name": "Lanre Ajao",
+      "email": "hi@lnear.dev",
+      "url": "https://lnear.dev"
+    }
+  ],
+  "homepage": "https://docs.lnear.dev/perhaps-ts",
   "files": [
     "dist"
   ],
